@@ -1,6 +1,6 @@
-/* Google Fonts에서 로드한 Roboto 글꼴 적용 */
+/* Google Fonts에서 로드한 Lato 글꼴 적용 */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Lato', sans-serif;
     background: linear-gradient(to bottom, #007bff, #6c757d);
     color: white;
     height: 100vh;
@@ -21,11 +21,36 @@ body {
     padding: 20px;
 }
 
-.responsive-image {
-    width: 100%;
-    max-width: 480px;
-    height: auto;
+.image-container {
+    perspective: 1000px;
     margin-bottom: 40px;
+    width: 384px; 
+    height: 480px; 
+    transition: all 0.1s;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    width: 380px;
+    height: 480px;
+    background: linear-gradient(105deg,
+    transparent 40%,
+    rgba(255, 219, 112, 0.8) 45%,
+    rgba(132, 50, 255, 0.6) 50%,
+    transparent 54%);
+    filter: brightness(1.1) opacity(0.8);
+    mix-blend-mode: color-dodge;
+    background-size: 150% 150%;
+    background-position: 100%;
+    transition: all 0.1s;
+}
+
+.card {
+    width: 380px; 
+    height: 480px;
+    background-image: url('../images/OSD.jpg');
+    background-size: cover;
 }
 
 .button-container {
@@ -51,7 +76,7 @@ body {
     align-items: center;
     transition: transform 0.3s ease; /* 호버 효과를 위한 트랜지션 추가 */
     cursor: pointer;
-    font-family: 'Roboto', sans-serif; /* 버튼에 Roboto 글꼴 적용 */
+    font-family: 'Lato', sans-serif; /* 버튼에 Lato 글꼴 적용 */
 }
 
 .button-wrapper:hover {
@@ -107,8 +132,8 @@ body {
     max-width: 300px; /* 최대 너비 설정 */
     text-align: center;
     border-radius: 10px;
-    font-family: 'Roboto', sans-serif; /* 모달에도 Roboto 글꼴 적용 */
-    transform: translateY(0%);
+    font-family: 'Lato', sans-serif; /* 모달에도 Lato 글꼴 적용 */
+    transform: translateY(-50%);
 }
 
 .modal-content h2 {
@@ -138,7 +163,7 @@ body {
     cursor: pointer;
     border-radius: 5px;
     width: 100%;
-    font-family: 'Roboto', sans-serif; /* 모달 버튼에도 Roboto 글꼴 적용 */
+    font-family: 'Lato', sans-serif; /* 모달 버튼에도 Lato 글꼴 적용 */
 }
 
 .modal-button:hover {
@@ -182,7 +207,7 @@ body {
         width: 90%;
         margin: 0 auto; /* 화면 중앙에 배치 */
         top: 50%;
-        transform: translateY(0%);
+        transform: translateY(-50%);
     }
 }
 
@@ -196,6 +221,7 @@ body {
         gap: 80px; /* 큰 화면에서는 버튼 간의 간격을 늘림 */
     }
 }
+
 
 
 
