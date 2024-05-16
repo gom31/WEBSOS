@@ -95,9 +95,6 @@ body {
     height: 100%;
     overflow: auto;
     background-color: rgba(0,0,0,0.5); /* 검은색 반투명 배경 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .modal-content {
@@ -182,7 +179,8 @@ body {
     .modal-content {
         width: 90%;
         margin: 0 auto; /* 화면 중앙에 배치 */
-        height: auto;
+        top : 150%;
+        transform: translateY(100%);
     }
 }
 
@@ -196,6 +194,7 @@ body {
     .button-container {
         gap: 80px; /* 큰 화면에서는 버튼 간의 간격을 늘림 */
     }
+
 }
 
 
