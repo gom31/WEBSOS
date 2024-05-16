@@ -5,28 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/mainstyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <title>main</title>
 </head>
 
 <body>
     <div class="content">
+        <img src="../images/OSD.jpg" alt="Central Image" class="responsive-image">
         <div class="button-container">
-            <button class="gradient-button" id="questionBtn">Question</button>
-            <div id="dropdownMenuQuestion" class="dropdown-content" style="display:none;">
-                <a href="#">Chapter 8</a>
-                <a href="#">Chapter 9</a>
-                <a href="#">Chapter 10</a>
-            </div>
-            <button class="gradient-button" id="studyBtn">Study</button>
-            <div id="dropdownMenuStudy" class="dropdown-content" style="display:none;">
-                <a href="#">Chapter 8</a>
-                <a href="#">Chapter 9</a>
-                <a href="#">Chapter 10</a>
-            </div>
-            <button class="gradient-button">Incorrect Answer Note</button>
+            <button class="button-wrapper" id="questionBtn">
+                <img src="../images/icon1.png" alt="Icon 1" class="button-icon">
+                <span class="gradient-button">Quiz</span>
+                <p class="button-description">Let's solve it like real test!</p>
+            </button>
+            <button class="button-wrapper" id="studyBtn">
+                <img src="../images/icon2.png" alt="Icon 2" class="button-icon">
+                <span class="gradient-button">Study</span>
+                <p class="button-description">Let’s study the scope of the final exam!</p>
+            </button>
+            <button class="button-wrapper">
+                <img src="../images/icon3.jpg" alt="Icon 3" class="button-icon">
+                <span class="gradient-button">Mistake Log</span>
+                <p class="button-description">Let’s review the questions we got wrong!</p>
+            </button>
         </div>
     </div>
-    <script src="../javascript/dropdown.js"></script>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Select Chapter</h2>
+            <button class="modal-button">Chapter 8</button>
+            <button class="modal-button">Chapter 9</button>
+            <button class="modal-button">Chapter 10</button>
+        </div>
+    </div>
+
+    <script src="../javascript/script.js"></script>
 </body>
 
 </html>
+
+
+
+

@@ -1,7 +1,6 @@
-/* mainstyle.css */
-
-/* 그라데이션 배경 적용 */
+/* Google Fonts에서 로드한 Roboto 글꼴 적용 */
 body {
+    font-family: 'Roboto', sans-serif;
     background: linear-gradient(to bottom, #007bff, #6c757d);
     color: white;
     height: 100vh;
@@ -14,65 +13,190 @@ body {
 
 .content {
     width: 100%;
-    height: 100%;
+    max-width: 1200px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-end; /* 초기 상태에서 중앙 하단 배치 */
+    align-items: center;
+    padding: 20px;
+}
+
+.responsive-image {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    margin-bottom: 40px;
 }
 
 .button-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
-    margin-bottom: 20px; /* 하단 여백 */
+    justify-content: center;
+    gap: 20px; /* 기본 간격 */
 }
 
-/* 버튼 스타일 */
+.button-wrapper {
+    background: #28a745;
+    border: none; /* 기본 버튼 스타일 제거 */
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+    height: 180px; /* 고정 높이 설정 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease; /* 호버 효과를 위한 트랜지션 추가 */
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif; /* 버튼에 Roboto 글꼴 적용 */
+}
+
+.button-wrapper:hover {
+    transform: scale(1.05); /* 호버 시 약간 확대 */
+}
+
+.button-icon {
+    width: 50px;
+    height: 50px;
+}
+
 .gradient-button {
-    background: linear-gradient(45deg, #6b73ff, #000dff);
+    background: none;
+    color: white;
+    font-size: 18px;
+    margin: 10px 0;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: bold; /* 굵은 글꼴 적용 */
+}
+
+.button-description {
+    color: white;
+    font-size: 14px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* 모달 스타일 */
+.modal {
+    display: none; /* 기본적으로 숨김 */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5); /* 검은색 반투명 배경 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 300px; /* 최대 너비 설정 */
+    text-align: center;
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif; /* 모달에도 Roboto 글꼴 적용 */
+}
+
+.modal-content h2 {
+    color: #333; /* 글자 색상을 다크 그레이로 변경 */
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-button {
+    background: #007bff;
     border: none;
     color: white;
     padding: 10px 20px;
     margin: 10px 0;
     cursor: pointer;
     border-radius: 5px;
-    transition: background 0.3s ease;
+    width: 100%;
+    font-family: 'Roboto', sans-serif; /* 모달 버튼에도 Roboto 글꼴 적용 */
 }
 
-.gradient-button:hover {
-    background: linear-gradient(45deg, #000dff, #6b73ff);
-}
-
-/* 드롭다운 메뉴 스타일 */
-.dropdown-content {
-    display: none;
-    flex-direction: column;
-    background-color: white;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    position: absolute;
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #ddd;
+.modal-button:hover {
+    background: #0056b3;
 }
 
 /* 반응형 설정 */
 @media (max-width: 768px) {
-    .content {
-        align-items: flex-end; /* 작은 화면에서도 중앙 하단 배치 유지 */
+    .responsive-image {
+        max-width: 80%; /* 작은 화면에서는 이미지 크기를 줄임 */
+        margin-bottom: 20px; /* 간격도 줄임 */
+    }
+
+    .button-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .button-wrapper {
+        padding: 10px; /* 작은 화면에서는 패딩을 줄임 */
+        width: 100%; /* 작은 화면에서는 버튼이 화면 너비를 채움 */
+        max-width: 300px; /* 최대 너비를 제한 */
+        height: auto; /* 고정 높이 해제 */
+    }
+
+    .button-icon {
+        width: 30px; /* 아이콘 크기를 줄임 */
+        height: 30px;
+    }
+
+    .gradient-button {
+        font-size: 16px; /* 버튼 텍스트 크기를 줄임 */
+    }
+
+    .button-description {
+        font-size: 12px; /* 설명 텍스트 크기를 줄임 */
+    }
+
+    /* 작은 화면에서 모달 창 위치 조정 */
+    .modal-content {
+        width: 90%;
+        margin: 0 auto; /* 화면 중앙에 배치 */
+        height: auto;
     }
 }
 
-@media (max-height: 500px) {
-    .content {
-        align-items: center; /* 높이가 작을 때는 중앙 배치 */
+
+@media (min-width: 1024px) {
+    .responsive-image {
+        max-width: 480px;
+        margin-bottom: 40px;
+    }
+
+    .button-container {
+        gap: 80px; /* 큰 화면에서는 버튼 간의 간격을 늘림 */
     }
 }
+
+
+
