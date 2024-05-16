@@ -23,7 +23,7 @@ body {
 
 .image-container {
     perspective: 1000px;
-    margin-bottom: 40px;
+    margin-bottom: 80px;
     width: 384px; 
     height: 480px; 
     transition: all 0.1s;
@@ -172,14 +172,13 @@ body {
 
 /* 반응형 설정 */
 @media (max-width: 768px) {
-    .responsive-image {
-        max-width: 80%; /* 작은 화면에서는 이미지 크기를 줄임 */
-        margin-bottom: 20px; /* 간격도 줄임 */
+    .image-container {
+        display: none; /* 작은 화면에서는 이미지 컨테이너를 숨김 */
     }
 
     .button-container {
         flex-direction: column;
-        gap: 10px;
+        gap: 40px;
     }
 
     .button-wrapper {
@@ -187,6 +186,7 @@ body {
         width: 100%; /* 작은 화면에서는 버튼이 화면 너비를 채움 */
         max-width: 300px; /* 최대 너비를 제한 */
         height: auto; /* 고정 높이 해제 */
+        margin-bottom: 40px;
     }
 
     .button-icon {
@@ -212,15 +212,11 @@ body {
 }
 
 @media (min-width: 1024px) {
-    .responsive-image {
-        max-width: 480px;
-        margin-bottom: 40px;
-    }
-
     .button-container {
-        gap: 80px; /* 큰 화면에서는 버튼 간의 간격을 늘림 */
+        gap: 100px; /* 큰 화면에서는 버튼 간의 간격을 늘림 */
     }
 }
+
 
 
 
