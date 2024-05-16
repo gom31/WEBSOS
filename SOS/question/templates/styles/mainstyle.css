@@ -1,11 +1,78 @@
+/* mainstyle.css */
+
+/* 그라데이션 배경 적용 */
 body {
-    /* 그라데이션 배경 적용 */
     background: linear-gradient(to bottom, #007bff, #6c757d);
-    /* 텍스트 색상을 밝은 색으로 설정하여 배경과 대비 */
     color: white;
-    /* 높이를 100%로 설정하여 전체 화면을 채움 */
     height: 100vh;
-    /* 마진과 패딩을 0으로 설정하여 기본 여백 제거 */
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* 초기 상태에서 중앙 하단 배치 */
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; /* 하단 여백 */
+}
+
+/* 버튼 스타일 */
+.gradient-button {
+    background: linear-gradient(45deg, #6b73ff, #000dff);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.gradient-button:hover {
+    background: linear-gradient(45deg, #000dff, #6b73ff);
+}
+
+/* 드롭다운 메뉴 스타일 */
+.dropdown-content {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    position: absolute;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* 반응형 설정 */
+@media (max-width: 768px) {
+    .content {
+        align-items: flex-end; /* 작은 화면에서도 중앙 하단 배치 유지 */
+    }
+}
+
+@media (max-height: 500px) {
+    .content {
+        align-items: center; /* 높이가 작을 때는 중앙 배치 */
+    }
 }
