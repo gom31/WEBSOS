@@ -44,7 +44,7 @@ body {
     padding: 20px;
     text-align: center;
     width: 200px;
-    height: 180px; /* 고정 높이 설정 */
+    height: 200px; /* 고정 높이 설정 */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -93,13 +93,14 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.5); /* 검은색 반투명 배경 */
+    background-color: rgba(0, 0, 0, 0.5); /* 검은색 반투명 배경 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
@@ -107,6 +108,7 @@ body {
     text-align: center;
     border-radius: 10px;
     font-family: 'Roboto', sans-serif; /* 모달에도 Roboto 글꼴 적용 */
+    transform: translateY(0%);
 }
 
 .modal-content h2 {
@@ -179,11 +181,10 @@ body {
     .modal-content {
         width: 90%;
         margin: 0 auto; /* 화면 중앙에 배치 */
-        top : 150%;
-        transform: translateY(100%);
+        top: 50%;
+        transform: translateY(0%);
     }
 }
-
 
 @media (min-width: 1024px) {
     .responsive-image {
@@ -194,8 +195,8 @@ body {
     .button-container {
         gap: 80px; /* 큰 화면에서는 버튼 간의 간격을 늘림 */
     }
-
 }
+
 
 
 

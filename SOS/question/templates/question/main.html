@@ -21,7 +21,7 @@
             <button class="button-wrapper" id="studyBtn">
                 <img src="../images/icon2.png" alt="Icon 2" class="button-icon">
                 <span class="gradient-button">Study</span>
-                <p class="button-description">Let’s study the scope of the final exam!</p>
+                <p class="button-description">Let's study the material for the final exam!</p>
             </button>
             <button class="button-wrapper">
                 <img src="../images/icon3.jpg" alt="Icon 3" class="button-icon">
@@ -31,17 +31,29 @@
         </div>
     </div>
 
-    <div id="modal" class="modal">
+    <!-- Quiz Modal -->
+    <div id="quizModal" class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
             <h2>Select Chapter</h2>
-            <button class="modal-button">Chapter 8</button>
-            <button class="modal-button">Chapter 9</button>
-            <button class="modal-button">Chapter 10</button>
+            <button class="modal-button" id="quizChapter8Btn">Chapter 8</button>
+            <button class="modal-button" id="quizChapter9Btn">Chapter 9</button>
+            <button class="modal-button" id="quizChapter10Btn">Chapter 10</button>
         </div>
     </div>
 
-    <script src="../javascript/script.js"></script>
+    <!-- Study Modal -->
+    <div id="studyModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Select Chapter</h2>
+            <button class="modal-button" id="studyChapter8Btn">Chapter 8</button>
+            <button class="modal-button" id="studyChapter9Btn">Chapter 9</button>
+            <button class="modal-button" id="studyChapter10Btn">Chapter 10</button>
+        </div>
+    </div>
+
+    <script src="../javascript/mainscript.js"></script>
 </body>
 
 </html>
