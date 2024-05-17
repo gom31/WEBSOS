@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../styles/home.css">
     <title>Home</title>
+    <!-- 외부 CSS 파일 연결 -->
+    <link rel="stylesheet" href="../styles/login.css">
 </head>
-
 <body>
     <div class="login-container">
+        <!-- 사용자가 인증된 경우 -->
         {% if user.is_authenticated %}
             <h1>Welcome, {{ user.username }}!</h1>
             <p><a href="{% url 'question:logout' %}">Logout</a></p>
+        <!-- 사용자가 인증되지 않은 경우 -->
         {% else %}
             <h1 class="login-title">Log in</h1>
+            <!-- 로그인 오류 메시지 표시 -->
             {% if error %}
                 <p class="error-message">{{ error }}</p>
             {% endif %}
+            <!-- 로그인 폼 -->
             <form method="post" class="login-form">
                 {% csrf_token %}
                 <div class="input-group">
                     <label for="username">
                         <i class="fas fa-envelope"></i>
-                        <input type="text" id="username" name="username" placeholder="Username">
+                        <input type="text" id="username" name="username" placeholder="Username" required>
                     </label>
                 </div>
                 <div class="input-group">
                     <label for="password">
                         <i class="fas fa-lock"></i>
-                        <input type="password" id="password" name="password" placeholder="Password">
+                        <input type="password" id="password" name="password" placeholder="Password" required>
                     </label>
                 </div>
                 <button type="submit" class="login-button">Log in</button>
@@ -36,7 +39,10 @@
             <p><a href="{% url 'question:signup' %}">Sign Up</a></p>
         {% endif %}
     </div>
+    <!-- FontAwesome 사용을 위한 스크립트 -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
-
 </html>
+
+
+

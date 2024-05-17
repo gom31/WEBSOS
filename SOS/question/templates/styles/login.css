@@ -1,5 +1,7 @@
+/* 전체 페이지의 폰트를 Lato로 설정 */
 body {
     font-family: 'Lato', sans-serif;
+    /* 배경을 그라데이션으로 설정 */
     background: linear-gradient(to bottom, #007bff, #6c757d);
     color: white;
     height: 100vh;
@@ -10,6 +12,7 @@ body {
     align-items: center;
 }
 
+/* 로그인 폼 컨테이너 스타일 설정 */
 .login-container {
     background: #34495E;
     padding: 40px;
@@ -20,27 +23,32 @@ body {
     max-width: 400px;
 }
 
+/* 로그인 타이틀 스타일 */
 .login-title {
     margin-bottom: 20px;
     font-size: 24px;
     color: white;
 }
 
+/* 에러 메시지 스타일 */
 .error-message {
     color: red;
     margin-bottom: 20px;
 }
 
+/* 로그인 폼 스타일 */
 .login-form {
     display: flex;
     flex-direction: column;
 }
 
+/* 입력 그룹 스타일 */
 .input-group {
     position: relative;
     margin-bottom: 20px;
 }
 
+/* 레이블 스타일 */
 .input-group label {
     display: flex;
     align-items: center;
@@ -49,11 +57,13 @@ body {
     border-radius: 5px;
 }
 
+/* 아이콘 스타일 */
 .input-group i {
     margin-right: 10px;
     color: #BDC3C7;
 }
 
+/* 입력 필드 스타일 */
 .input-group input {
     border: none;
     background: none;
@@ -62,6 +72,7 @@ body {
     outline: none;
 }
 
+/* 로그인 버튼 스타일 */
 .login-button {
     background: #1ABC9C;
     border: none;
@@ -73,15 +84,18 @@ body {
     transition: background 0.3s;
 }
 
+/* 로그인 버튼 호버 스타일 */
 .login-button:hover {
     background: #16A085;
 }
 
+/* 링크 스타일 */
 a {
     color: #1ABC9C;
     text-decoration: none;
 }
 
+/* 링크 호버 스타일 */
 a:hover {
     text-decoration: underline;
 }
