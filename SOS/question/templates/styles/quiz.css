@@ -1,0 +1,11 @@
+body {
+    font-family: 'Lato', sans-serif;
+    background: linear-gradient(to bottom, #007bff, #6c757d);
+    color: white;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,4 +1,3 @@
-/* Google Fonts에서 로드한 Lato 글꼴 적용 */
 body {
     font-family: 'Lato', sans-serif;
     background: linear-gradient(to bottom, #007bff, #6c757d);
@@ -133,7 +132,7 @@ body {
     text-align: center;
     border-radius: 10px;
     font-family: 'Lato', sans-serif; /* 모달에도 Lato 글꼴 적용 */
-    transform: translateY(-50%);
+    transform: translateY(0%);
 }
 
 .modal-content h2 {
@@ -207,7 +206,7 @@ body {
         width: 90%;
         margin: 0 auto; /* 화면 중앙에 배치 */
         top: 50%;
-        transform: translateY(-50%);
+        transform: translateY(0%);
     }
 }
 
