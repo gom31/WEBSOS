@@ -1,11 +1,57 @@
+/* Google Fonts에서 로드한 Lato 글꼴 적용 */
 body {
     font-family: 'Lato', sans-serif;
-    background: linear-gradient(to bottom, #007bff, #6c757d);
+    background: linear-gradient(to bottom, #007bff, #6c757d); /* main.html과 동일한 배경색 */
     color: white;
     height: 100vh;
     margin: 0;
-    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+header {
+    margin-top: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.arrow-button {
+    background: #1ABC9C;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.arrow-button:hover {
+    background: #16A085;
 }
