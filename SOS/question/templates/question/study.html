@@ -3,14 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../styles/study.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <title>Study</title>
 </head>
 <body>
-    # 챕터에 해당하는 빈칸없는 문제 DB 받아오기 Questions
-    # 챕터 표시하는 h1
-    # 이미지
-    # 앞으로 버튼
-    # 뒤로 버튼
-    # 메인으로 나가기 버튼
+    <div class="container">
+        <header>
+            <h1 class="chapter-title" id="chapter-title"></h1>
+        </header>
+        <main>
+            <!-- 문제 내용이 여기에 표시됩니다 -->
+            <div id="question-content"></div>
+        </main>
+        <footer>
+            <button id="prev" class="arrow-button">&larr;</button>
+            <button id="home" class="home-button" onclick="window.location.href='main.html'">
+                <img src="../images/home-icon.png" alt="Home" class="icon">
+            </button>
+            <button id="next" class="arrow-button">&rarr;</button>
+        </footer>
+    </div>
+    <script src="../scripts/studyscript.js"></script>
 </body>
 </html>
