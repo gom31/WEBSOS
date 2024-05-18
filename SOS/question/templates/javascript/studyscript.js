@@ -1,8 +1,13 @@
+console.log('studyscript.js loaded'); // 파일이 로드되었는지 확인
+
 document.addEventListener('DOMContentLoaded', function () {
+    console.log('DOMContentLoaded event fired'); // 디버깅용 로그
 
     // URL 파라미터에서 챕터 정보 가져오기
     const urlParams = new URLSearchParams(window.location.search);
-    const chapter = urlParams.get('chapter') || '8'; // 기본값: 8
+    const chapter = urlParams.get('chapter_num') || '8'; // 기본값: 8
+
+    console.log('Chapter:', chapter); // 디버깅용 로그
 
     // 챕터 타이틀 설정
     const chapterTitle = document.getElementById('chapter-title');
@@ -19,6 +24,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // 문제 내용 설정 (데이터베이스에서 가져오는 로직 추가)
     const studyContent = document.getElementById('study-content');
     studyContent.textContent = `Study content for Chapter ${chapter}`; // 예시 텍스트
+
+    console.log('Study Content:', studyContent.textContent); // 디버깅용 로그
 
     // 이전, 다음 버튼 클릭 이벤트 설정
     document.getElementById('prev').addEventListener('click', function() {

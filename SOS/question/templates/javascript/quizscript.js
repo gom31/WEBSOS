@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // URL 파라미터에서 챕터 정보 가져오기
     const urlParams = new URLSearchParams(window.location.search);
-    const chapter = urlParams.get('chapter') || '8'; // 기본값: 8
+    const chapter = urlParams.get('chapter_num') || '8'; // 기본값: 8
 
     console.log('Chapter:', chapter); // 디버깅용 로그
 
