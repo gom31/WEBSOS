@@ -52,15 +52,15 @@ document.getElementById("quizChapter10Btn").addEventListener("click", function()
 
 // 각 챕터 버튼에 클릭 이벤트 추가 (Study)
 document.getElementById("studyChapter8Btn").addEventListener("click", function() {
-    window.location.href = "study8.html";
+    window.location.href = "study.html?chapter=8";
 });
 
 document.getElementById("studyChapter9Btn").addEventListener("click", function() {
-    window.location.href = "study9.html";
+    window.location.href = "study.html?chapter=9";
 });
 
 document.getElementById("studyChapter10Btn").addEventListener("click", function() {
-    window.location.href = "study10.html";
+    window.location.href = "study.html?chapter=10";
 });
 
 // 이미지 3D 회전
@@ -82,3 +82,4 @@ container.addEventListener('mouseout', function() {
     overlay.style = 'filter: opacity(0)';
     container.style = 'transform: perspective(350px) rotateY(0deg) rotateX(0deg)';
 });
+

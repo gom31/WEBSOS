@@ -65,7 +65,7 @@ footer {
     height: 24px;
 }
 
-/* Chapter 타이틀 스타일링 */
+/* Chapter 타이틀 스타일링 (quiz 페이지와 동일하게) */
 .chapter-title {
     font-size: 3rem; /* 글꼴 크기 */
     font-weight: 700; /* 글꼴 굵기 */
