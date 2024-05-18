@@ -1,0 +1,77 @@
+/* 전체 페이지의 폰트를 Lato로 설정 */
+body {
+    font-family: 'Lato', sans-serif;
+    background: linear-gradient(to bottom, #007bff, #6c757d);
+    color: white;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 회원 가입 폼 컨테이너 스타일 설정 */
+.signup-container {
+    background: rgba(52, 73, 94, 0.9);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* 회원 가입 타이틀 스타일 */
+.signup-title {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: white;
+}
+
+/* 회원 가입 폼 스타일 */
+.signup-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 입력 그룹 스타일 */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: #bdc3c7;
+}
+
+/* 입력 필드 스타일 */
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #2c3e50;
+    color: white;
+    outline: none;
+    font-size: 1rem;
+}
+
+/* 회원 가입 버튼 스타일 */
+.signup-button {
+    background: #1ABC9C;
+    border: none;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.signup-button:hover {
+    background: #c0392b;
+}
