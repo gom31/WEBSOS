@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/mainstyle.css">
+    <title>Main</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/mainstyle.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <title>main</title>
 </head>
+
 <body>
     <div class="content">
         <div class="image-container">
@@ -15,17 +18,17 @@
         </div>
         <div class="button-container">
             <button class="button-wrapper" id="questionBtn">
-                <img src="../images/icon1.png" alt="Icon 1" class="button-icon">
+                <img src="{% static 'images/icon1.png' %}" alt="Icon 1" class="button-icon">
                 <span class="gradient-button">Quiz</span>
                 <p class="button-description">Let's solve it like real test!</p>
             </button>
             <button class="button-wrapper" id="studyBtn">
-                <img src="../images/icon2.png" alt="Icon 2" class="button-icon">
+                <img src="{% static 'images/icon2.png' %}" alt="Icon 2" class="button-icon">
                 <span class="gradient-button">Study</span>
                 <p class="button-description">Let's study the material for the final exam!</p>
             </button>
             <button class="button-wrapper">
-                <img src="../images/icon3.jpg" alt="Icon 3" class="button-icon">
+                <img src="{% static 'images/icon3.jpg' %}" alt="Icon 3" class="button-icon">
                 <span class="gradient-button">Mistake Log</span>
                 <p class="button-description">Let’s review the questions we got wrong!</p>
             </button>
@@ -54,8 +57,9 @@
         </div>
     </div>
 
-    <script src="../javascript/mainscript.js"></script>
+    <script src="{% static 'javascript/mainscript.js' %}"></script>
 </body>
+
 </html>
 
 

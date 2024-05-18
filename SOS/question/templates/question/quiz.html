@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/quiz.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <title>Quiz</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/quiz.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -18,14 +19,15 @@
         </main>
         <footer>
             <button id="prev" class="arrow-button">&larr;</button>
-            <button id="home" class="home-button" onclick="window.location.href='main.html'">
-                <img src="../images/home-icon.png" alt="Home" class="icon">
+            <button id="home" class="home-button">
+                <img src="{% static 'images/home-icon.png' %}" alt="Home" class="icon">
             </button>
             <button id="next" class="arrow-button">&rarr;</button>
         </footer>
     </div>
-    <script src="../javascript/quizscript.js"></script>
+    <script src="{% static 'javascript/quizscript.js' %}"></script>
 </body>
 </html>
+
 
 
