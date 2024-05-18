@@ -41,7 +41,7 @@ footer {
     padding: 20px;
 }
 
-.arrow-button {
+.arrow-button, .home-button {
     background: #1ABC9C;
     border: none;
     color: white;
@@ -50,13 +50,22 @@ footer {
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.arrow-button:hover {
+.arrow-button:hover, .home-button:hover {
     background: #16A085;
 }
 
-/* 타이틀 스타일링 */
+/* 아이콘 스타일 */
+.icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Chapter 타이틀 스타일링 (quiz 페이지와 동일하게) */
 .chapter-title {
     font-size: 3rem; /* 글꼴 크기 */
     font-weight: 700; /* 글꼴 굵기 */
@@ -70,7 +79,7 @@ footer {
     background: rgba(46, 204, 113, 0.1); /* 배경 색상 (투명 초록색) */
     opacity: 0; /* 초기 상태: 투명 */
     transform: translateY(-50px); /* 초기 상태: 위로 이동 */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* 애니메이션 전환 효과 */
+    transition: opacity 1s ease, transform 1s ease; /* 애니메이션 전환 효과 */
 }
 
 /* 애니메이션 활성화 클래스 */

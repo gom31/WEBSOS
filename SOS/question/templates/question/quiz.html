@@ -5,22 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/quiz.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <title>quiz8</title>
+    <title>Quiz</title>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1 class="chapter-title">Chapter 8</h1>
+            <h1 class="chapter-title" id="chapter-title"></h1>
         </header>
         <main>
-            <!-- 퀴즈 내용을 여기에 추가하세요 -->
+            <!-- 퀴즈 내용이 여기에 표시됩니다 -->
+            <div id="quiz-content"></div>
         </main>
         <footer>
             <button id="prev" class="arrow-button">&larr;</button>
+            <button id="home" class="home-button" onclick="window.location.href='main.html'">
+                <img src="../images/home-icon.png" alt="Home" class="icon">
+            </button>
             <button id="next" class="arrow-button">&rarr;</button>
         </footer>
     </div>
     <script src="../javascript/quizscript.js"></script>
 </body>
 </html>
+
 

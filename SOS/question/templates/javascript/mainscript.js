@@ -39,28 +39,28 @@ window.addEventListener("click", function(event) {
 
 // 각 챕터 버튼에 클릭 이벤트 추가 (Quiz)
 document.getElementById("quizChapter8Btn").addEventListener("click", function() {
-    window.location.href = "quiz8.html";
+    window.location.href = "quiz.html?chapter_num=8";
 });
 
 document.getElementById("quizChapter9Btn").addEventListener("click", function() {
-    window.location.href = "quiz9.html";
+    window.location.href = "quiz.html?chapter_num=9";
 });
 
 document.getElementById("quizChapter10Btn").addEventListener("click", function() {
-    window.location.href = "quiz10.html";
+    window.location.href = "quiz.html?chapter_num=10";
 });
 
 // 각 챕터 버튼에 클릭 이벤트 추가 (Study)
 document.getElementById("studyChapter8Btn").addEventListener("click", function() {
-    window.location.href = "study.html?chapter=8";
+    window.location.href = "study.html?chapter_num=8";
 });
 
 document.getElementById("studyChapter9Btn").addEventListener("click", function() {
-    window.location.href = "study.html?chapter=9";
+    window.location.href = "study.html?chapter_num=9";
 });
 
 document.getElementById("studyChapter10Btn").addEventListener("click", function() {
-    window.location.href = "study.html?chapter=10";
+    window.location.href = "study.html?chapter_num=10";
 });
 
 // 이미지 3D 회전
