@@ -122,7 +122,7 @@ class Command(BaseCommand):
              "image": os.path.join(settings.BASE_DIR, "media", "quiz_images", "chapter9", "internal fragmentation.png"),
              "answer": "internal fragmentation"},
              {"chapter": 9,
-             "image": os.path.join(settings.BASE_DIR, "media", "quiz_images", "chapter9", "compaction"),
+             "image": os.path.join(settings.BASE_DIR, "media", "quiz_images", "chapter9", "compaction.png"),
              "answer": "compaction"},
              {"chapter": 9,
              "image": os.path.join(settings.BASE_DIR, "media", "quiz_images", "chapter9", "frame.png"),
