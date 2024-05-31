@@ -204,7 +204,24 @@ body {
     }
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 1137px) {
+    .button-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px; /* 간격을 좁힘 */
+    }
+
+    .button-wrapper {
+        width: calc(50% - 10px); /* 버튼 너비를 45%로 설정하여 2개씩 배치 */
+        height: 150px; /* 버튼 높이 줄임 */
+        max-width: none; /* 최대 너비 제한 해제 */
+        padding: 10px; /* 작은 화면에서는 패딩을 줄임 */
+        width: 200px;
+    }
+}
+
+@media (min-width: 1138px) {
     .button-container {
         gap: 100px; /* 큰 화면에서는 버튼 간의 간격을 늘림 */
     }
