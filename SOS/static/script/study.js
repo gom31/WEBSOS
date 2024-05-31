@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('Animation Class Added'); // 디버깅용 로그
     }, 100); // 페이지 로드 후 100ms 대기 후 애니메이션 시작
 
-    // 이전, 다음 버튼 클릭 이벤트 설정
     document.getElementById('prev').addEventListener('click', goToPreviousQuestion);
     document.getElementById('next').addEventListener('click', goToNextQuestion);
+
 });
