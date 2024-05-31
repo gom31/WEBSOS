@@ -1,19 +1,21 @@
-import enum
-from re import sub
 from django.db import IntegrityError
 from django.utils import timezone
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 import json
+from django.db.models import Func, FloatField
 from django.core.exceptions import ValidationError
 from django.views.decorators.csrf import csrf_exempt
 import logging
 
 from .models import Question, SolvedQuestion, ExamLog
+
+class Random(Func):
+    function = 'RANDOM'
+    output_field = FloatField()
 
 def root_view(request):
     # 사용자가 인증된 경우 메인 페이지로 리다이렉트
@@ -34,9 +36,12 @@ def index(request):
     else:
         return render(request, 'question/index.html')
 
-
+@login_required
 def main(request):
-    return render(request, 'question/main.html')
+    context = {
+        'username': request.user.username
+    }
+    return render(request, 'question/main.html', context)
 
 def logout_view(request):
     logout(request)
@@ -65,12 +70,13 @@ def signup(request):
         except ValidationError as e:
             return render(request, 'question/signup.html', {'error': e.messages})
         except Exception as e:
-            return render(request, 'question/signup.html', {'error': 'An unexpected error occurred'})
+            return render(request, 'question/signup.html', {'error': 'The user is already registered'})
     else:
         return render(request, 'question/signup.html')
 
 logger = logging.getLogger(__name__)
 
+@login_required
 @csrf_exempt
 @login_required
 def quiz(request, chapter_num):
@@ -146,6 +152,7 @@ def quiz(request, chapter_num):
     logger.debug("Rendering quiz template with context: %s", context)
     return render(request, 'question/quiz.html', context)
 
+@login_required
 @csrf_exempt
 @login_required
 def retest(request, chapter_num):
@@ -221,6 +228,7 @@ def retest(request, chapter_num):
     logger.debug("Rendering quiz template with context: %s", context)
     return render(request, 'question/retest.html', context)
 
+@login_required
 def study(request, chapter_num):
     questions = Question.objects.filter(chapter=chapter_num)
     total_questions = questions.count()
@@ -238,6 +246,7 @@ def study(request, chapter_num):
     }
     return render(request, 'question/study.html', context)
 
+@login_required
 def mistake_log(request):
     mistake_logs = ExamLog.objects.filter(user=request.user.id).order_by('-exam_dateTime') # '-exam_dateTime' means that it is sorted by newest first.
     return render(request, 'question/mistake_log.html', {"exam_logs": mistake_logs})  #add by G
@@ -248,6 +257,7 @@ def test(request):
         'question' : question
     })
 
+@login_required
 def result(request):
     correct_answers = request.session.get('correct_answers', 0)
     incorrect_answers = request.session.get('incorrect_answers', 0)

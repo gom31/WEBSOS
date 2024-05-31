@@ -26,10 +26,14 @@
             <form method="post" class="answer-form" id="quizForm">
                 {% csrf_token %}
                 <label for="answer" class="form-label">Your Answer:</label>
-                <input type="text" id="answer" name="answer" class="form-input" required>
+                <input type="text" id="answer" name="answer" class="form-input" autocomplete="off" required>
                 <button type="submit" id="submitBtn" class="form-button">Submit</button>
             </form>
-            <h1> This is wrong answer that you write: {{current_question.submitted_answer}}</h1>
+            {% if current_question.submitted_answer == "" %}
+            <h1>You did not solve this question before.</h1>
+            {% else %}
+            <h1>This is the wrong answer that you wrote: {{ current_question.submitted_answer }}</h1>
+            {% endif %}
         </div>
         <footer>
             <button id="prev" class="arrow-button" onclick="goToPreviousQuestion()" {% if current_index == 0 %}disabled{% endif %}>&larr;</button>
@@ -37,17 +41,14 @@
                 <img src="{% static 'images/home-icon.png' %}" alt="Home" class="icon">
             </button>
             {% csrf_token %}
-            <button id="tsubmitBtn" class="total-submit">
-                <img src="{% static 'images/tsubmit-icon.png' %}" alt="Total" class="icon">
-            </button>
+            <button id="tsubmitBtn" class="total-submit">Finish</button>
             <button id="next" class="arrow-button" onclick="goToNextQuestion()" {% if current_index == total_1 %}disabled{% endif %}>&rarr;</button>
         </footer>
         {% else %}
         <p>No questions available for this chapter.</p>
-        <button id="home" class="home-button" onclick="window.location.href='{% url 'question:main' %}'">
-            <img src="{% static 'images/home-icon.png' %}" alt="Home" class="icon">
-        </button>
         {% endif %}
+
+        <img src="{% static 'images/sos.png' %}" alt="SOS Logo" class="logo">
 
         <!-- Result Modal -->
         <div id="resultModal" class="modal" data-correct-img="{% static 'images/victory.gif' %}" data-wrong-img="{% static 'images/cry.gif' %}">
@@ -55,6 +56,17 @@
                 <span id="closeModalBtn" class="close-button">&times;</span>
                 <img id="resultImage" class="result-image" src="" alt="Result Image">
                 <h2 id="resultMessage"></h2>
+            </div>
+        </div>
+
+        <!-- total result modal-->
+        <div id="totalModal" class="modal">
+            <div class="modal-content">
+                <h2 id="resultMessage2">Are you sure you want to submit?</h2>
+                <div class="button-container">
+                    <button id="yesButton" class="modal-button">Yes</button>
+                    <button id="noButton" class="modal-button">No</button>
+                </div>
             </div>
         </div>
     </div>
