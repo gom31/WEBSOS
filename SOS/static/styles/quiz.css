@@ -82,6 +82,10 @@ footer {
     visibility: hidden;
 }
 
+.total-submit.invisible {
+    visibility: hidden;
+}
+
 .icon {
     width: 24px;
     height: 24px;

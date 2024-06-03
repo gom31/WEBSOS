@@ -1,5 +1,3 @@
-console.log('retest.js loaded');
-
 // functions for moving to previous and next question pages
 function goToPreviousQuestion() {
     if (currentQuestionIndex > 0) {
@@ -20,6 +18,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const chapterTitle = document.getElementById('chapter-title');
     chapterTitle.textContent = `Chapter ${chapter} Retest`;
 
+    //default setting totalModal for none
+    document.getElementById('totalModal').style.display = 'none';
+    
     // animation activation class
     setTimeout(() => {
         chapterTitle.classList.add('show');
@@ -29,9 +30,11 @@ document.addEventListener('DOMContentLoaded', function () {
     var answers = JSON.parse(localStorage.getItem('quizAnswers')) || new Array(totalQuestions).fill("");
 
     // if submitted answer exist, return
-    if (answers[currentQuestionIndex] !== null) {
+    if (answers[currentQuestionIndex] !== null&undefined) {
         document.getElementById('answer').value = answers[currentQuestionIndex];
     }
+    // if submitted answer doesn't exist, block total submit
+    else{document.getElementById('tsubmitBtn').classList.add('invisible');}
 
      // logic for make next button and prev button invisivle in specific case
     const prevButton = document.getElementById('prev');
@@ -69,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
             localStorage.setItem('quizAnswers', JSON.stringify(answers));
 
             // checking submiitted answer is correct
-            if (correctAnswers == answer.toLowerCase()) {
+            if (correctAnswers.toLowerCase().replace(/[^a-zA-Z]/g, '') === answer.toLowerCase().replace(/[^a-zA-Z]/g, '')) {
                 resultMessage.textContent = 'You are correct!';
                 resultMessage.classList.add('correct');
                 resultMessage.classList.remove('wrong');
@@ -97,14 +100,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    //default setting totalModal for none
-    document.getElementById('totalModal').style.display = 'none';
+    
     // if tsubmit is clicked, open totalModal
     document.getElementById('tsubmitBtn').addEventListener('click', function() {
         document.getElementById('totalModal').style.display = 'flex'; 
     });
-
-    //if click yes in totalModal, post result to server 
+    
+    //if click yes in totalModal, post result to server
     document.getElementById('yesButton').addEventListener('click', function() {
         fetch(`/question/quiz/${chapter_num}/`, {
             method: 'POST',
@@ -138,6 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
             alert('There was an error submitting your answers.');
         });
     });
+
 
     //if click no in totalModal, close modal
     document.getElementById('noButton').addEventListener('click', function() {

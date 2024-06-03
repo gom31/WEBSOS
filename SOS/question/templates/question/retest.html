@@ -11,7 +11,15 @@
     <script>
         var currentQuestionIndex = {{ current_index }};
         var totalQuestions = {{ total_questions }};
-        var correctAnswers = "{{current_question.solved_questions.answer}}";
+        function decodeHTMLEntities(text) {
+            var parser = new DOMParser();
+            var dom = parser.parseFromString(
+                '<!doctype html><body>' + text,
+                'text/html');
+            return dom.body.textContent;
+        }
+        var correctAnswers = decodeHTMLEntities("{{ current_question.answer|escapejs }}");
+    
         var chapter_num = {{chapter_num}};
     </script>
 </head>
@@ -24,11 +32,11 @@
         {% if current_question %}
         <!-- Question container -->
         <div class="question-container">
-            {% if current_index is not None %}
             <!-- Question number -->
             <p>&lt;Question {{current_index|add:"1"}}&gt;</p>
             {% endif %}
             <!-- Question image -->
+            {% if current_question != None%}
             {% if current_question.solved_questions.image %}
             <img src="{{ current_question.solved_questions.image.url }}" alt="Question Image" class="question-image" id="question-img">
             {% endif %}
@@ -64,7 +72,20 @@
 
         {% else %}
         <!-- Message when no questions are available -->
-        <p>No questions available for this chapter.</p>
+        <p>There is no solved questions</p>
+        <footer>
+            <!-- Navigate button. Get the next or prev question by interacting with views -->
+            <button id="prev" class="arrow-button" onclick="goToPreviousQuestion()" {% if current_index == 0 %}disabled{% endif %}>&larr;</button>
+            <!-- Back to main page -->
+            <button id="home" class="home-button" onclick="window.location.href='{% url 'question:main' %}'">
+                <img src="{% static 'images/home-icon.png' %}" alt="Home" class="icon">
+            </button>
+            {% csrf_token %}
+            <!-- Total submit. Send all answers that the user submitted to the back side -->
+            <button id="tsubmitBtn" class="total-submit">Finish</button>
+            <button id="next" class="arrow-button" onclick="goToNextQuestion()" {% if current_index == total_1 %}disabled{% endif %}>&rarr;</button>
+        </footer>
+
         {% endif %}
 
         <img src="{% static 'images/sos.png' %}" alt="SOS Logo" class="logo">
